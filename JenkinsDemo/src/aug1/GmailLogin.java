@@ -6,13 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 public class GmailLogin {
-	static WebDriver driver;
+	
 	//This is the Test Case of Gmail Login user
 	@Test
 	public static void test() throws Exception{
-		
-		System.setProperty("webdriver.chrome.driver", "D:\\Learning\\Drivers\\Chrome\\chromedriver.exe");
-		driver=new ChromeDriver();
+		String sKeypath="webdriver.chrome.driver";
+		System.setProperty(sKeypath, "D:\\Learning\\Drivers\\Chrome\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
 		driver.get("https://accounts.google.com/ServiceLogin/identifier?service=mail&flowName=GlifWebSignIn&flowEntry=AddSession");
 		System.out.println("Gmail website is launched");
 		driver.findElement(By.id("identifierId")).sendKeys("Seleniumlearning0806@gmail.com");
